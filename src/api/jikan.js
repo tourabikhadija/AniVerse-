@@ -18,5 +18,11 @@ async function allAnimes(page=1){
     return resdata
 }
 
+async function sercheAnime(query, page=1){
+    const res = await fetch(`${JIKAN_BASE}/anime?q=${encodeURIComponent(query)}&page=${page}&limit=24`)
+    const resdata = await res.json()
+    return resdata
+}
 
-export { topAnimes ,seasonAnimes, allAnimes}
+
+export { topAnimes ,seasonAnimes, allAnimes,sercheAnime}
