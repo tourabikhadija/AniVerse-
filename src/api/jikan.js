@@ -1,0 +1,22 @@
+import { JIKAN_BASE } from "../utils/constants";
+
+async function topAnimes(){
+    const res = await fetch(`${JIKAN_BASE}/top/anime?filter=bypopularity`)
+    const resdata = await res.json()
+    return resdata
+}
+
+async function seasonAnimes(){
+    const res = await fetch(`${JIKAN_BASE}/seasons/now`)
+    const resdata = await res.json()
+    return resdata
+}
+
+async function allAnimes(page=1){
+    const res = await fetch(`${JIKAN_BASE}/anime?page=${page}&limit=24`)
+    const resdata = await res.json()
+    return resdata
+}
+
+
+export { topAnimes ,seasonAnimes, allAnimes}
