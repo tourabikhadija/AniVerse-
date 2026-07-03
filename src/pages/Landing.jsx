@@ -1,6 +1,7 @@
 import { topAnimes, seasonAnimes } from "../api/jikan.js";
 import AnimeCard from "../components/common/AnimeCard.jsx";
 import { useState, useEffect } from "react";
+import  "../style/Landing.css"
 
 export default function Landing() {
   const [trending, setTrending] = useState([]);
