@@ -23,6 +23,23 @@ async function sercheAnime(query, page=1){
     const resdata = await res.json()
     return resdata
 }
+async function getAnimeById(id){
+    const res = await fetch(`${JIKAN_BASE}/anime/${id}`)
+    const resdata = await res.json()
+    return resdata
+}
+
+async function getAnimeCharacters(id){
+    const res = await fetch(`${JIKAN_BASE}/anime/${id}/characters`)
+    const resdata = await res.json()
+    return resdata
+}
+
+async function getCharacterDetails(id){
+    const res = await fetch(`${JIKAN_BASE}/characters/${id}`)
+    const resdata = await res.json()
+    return resdata
+}
 
 
-export { topAnimes ,seasonAnimes, allAnimes,sercheAnime}
+export { topAnimes ,seasonAnimes, allAnimes,sercheAnime,getAnimeById, getAnimeCharacters , getCharacterDetails}
