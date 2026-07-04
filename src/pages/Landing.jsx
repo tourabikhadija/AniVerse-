@@ -2,6 +2,8 @@ import { topAnimes, seasonAnimes } from "../api/jikan.js";
 import AnimeCard from "../components/common/AnimeCard.jsx";
 import { useState, useEffect } from "react";
 import  "../style/Landing.css"
+import cover from "../assets/cover.png"; 
+import anime from "../assets/anime.png";
 
 export default function Landing() {
   const [trending, setTrending] = useState([]);
@@ -32,9 +34,16 @@ export default function Landing() {
   }, []);
 
   return (
+    <div>
     <section className="hero">
-      <h4>Discover Your Anime Universe</h4>
 
+      <div className="image-hero">
+          <img src={cover} alt="Anime cover" className="cover-img" />
+          <img src={anime} alt="Anime" className="anime-img" />
+
+      </div>
+
+      <h4>Track, Discover & Enjoy Anime</h4>
       <h1>Discover Your Anime Universe</h1>
 
       <p>
@@ -50,6 +59,8 @@ export default function Landing() {
         <li>500K+ Users</li>
         <li>50K+ Favorites</li>
       </ul>
+    </section>
+
 
       <section className="Topanime">
         <h1>top</h1>
@@ -64,6 +75,7 @@ export default function Landing() {
           <AnimeCard key={anime.mal_id} anime={anime} />
         ))}
       </section>
-    </section>
+    
+    </div>
   );
 }

@@ -1,3 +1,140 @@
 body{
-    background: #181857;
+    background: #1A1A2E;
+}
+.hero {
+  position: relative;
+  max-width: 100%;
+  min-height: 480px;
+  padding: 60px 40px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #0d0f1c;
+}
+
+
+.image-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+   
+}
+
+.cover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.24; 
+  filter: blur(1px);
+
+  /* calque de fondu: mn liman l lisser */
+  mask-image: linear-gradient(to right, transparent 40%, #181857 34%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #181857 4%);
+}
+/* Calque supplémentaire dyal "verre" (glass) fo9 l'image */
+.image-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+
+  /* chakl mayal (diagonal) */
+  clip-path: polygon(0 0, 100% 0, 40% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+}
+
+/* image ta3 personnage (Naruto etc) - fl right, fog cover-img */
+.anime-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 110%;        /* katkbr chwiya bach tban dominante */
+  max-width: 55%;
+  object-fit: contain;
+  z-index: 1;
+  
+}
+
+/* content (text, buttons, stats) khasso ykon fog kolchi */
+.hero h4,
+.hero h1,
+.hero p,
+.hero button,
+.hero ul {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.hero h4 {
+  color: #FF6B3D;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-size: 59px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #cfd3e1;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+.hero button {
+  position: relative;
+  z-index: 2;
+  padding: 12px 24px;
+  margin-right: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.hero button:first-of-type {
+  background: #ff7a3d;
+  border: none;
+  color: #fff;
+}
+
+.hero button:last-of-type {
+  background: transparent;
+  border: 1px solid #ff7a3d;
+  color: #fff;
+}
+
+.hero ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin-top: 40px;
+  padding: 0;
+}
+
+.hero ul li {
+  font-size: 0.9rem;
+  color: #cfd3e1;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  padding-right: 30px;
+}
+
+.hero ul li:last-child {
+  border-right: none;
 }
