@@ -3,8 +3,7 @@ import {useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Footer from "../components/common/Footer.jsx";
-
-
+import  "../style/AnimeDetail.css"
 
 export default function AnimeDetail() {
   const [anime, setAnime] = useState("")
@@ -24,30 +23,66 @@ export default function AnimeDetail() {
   
 
   return (
-    <div>
-      <h2>page AnimeDetail </h2>
-      <h1>{anime.title}</h1>
-      <img src={anime?.images?.jpg?.image_url} alt={anime?.title} /> 
-      <p>{anime.synopsis}</p> 
-      <p>{anime.score}</p>
-      <p>{anime.year}</p>
-      <h1>genres</h1>
-      {anime.genres?.map((genre)=> (
-        <h2 key={genre.mal_id}>{genre.name}</h2>
-      ))}
-      <h1>studios</h1>
-      {anime.studios?.map((studio)=>(
-        <h2 key={studio.mal_id}>{studio.name}</h2>
-      ))}
-      <p>{anime.episodes}</p>
-      <iframe src={anime?.trailer?.embed_url} frameBorder="0"></iframe>
+  <div>
 
-      <Link to={`/anime/${anime.mal_id}/characters`}>
-      <button>character anime</button>
-      </Link>
-      <div>
-        <Footer/>
+    <section className="detail-anime">
+
+      <h1>{anime.title}</h1>
+
+      <img
+        src={anime?.images?.jpg?.image_url}
+        alt={anime?.title}
+      />
+
+      <img
+        src={anime?.images?.webp?.large_image_url}
+        alt={anime?.title}
+        className="cover-img"
+      />
+
+      <div className="container">
+
+        <p>{anime.synopsis}</p>
+        <p>⭐ {anime.score}</p>
+        <p>📅 {anime.year}</p>
+
+        <section className="genres">
+          {anime.genres?.map((genre) => (
+            <h2 key={genre.mal_id}>{genre.name}</h2>
+          ))}
+        </section>
+
+        <section className="anime-extra">
+          <h1>Studios</h1>
+
+          {anime.studios?.map((studio) => (
+            <h2 key={studio.mal_id}>{studio.name}</h2>
+          ))}
+
+          <p>Episodes: {anime.episodes}</p>
+
+          <iframe
+            src={anime?.trailer?.embed_url}
+            frameBorder="0"
+            title="Anime Trailer"
+          ></iframe>
+        </section>
+
+        <Link
+          to={`/anime/${anime.mal_id}/characters`}
+          className="characters-link"
+        >
+          <button className="characters-btn">
+            View Characters
+          </button>
+        </Link>
+
       </div>
-    </div>
-  );
+
+    </section>
+
+    <Footer />
+
+  </div>
+);
 }

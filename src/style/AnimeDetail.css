@@ -1,0 +1,148 @@
+.detail-anime {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px;
+  overflow: hidden;
+}
+
+
+.cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+
+.detail-anime::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+
+.detail-anime h1 {
+  color: #fff;
+  font-size: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+
+.detail-anime > img:first-of-type {
+  width: 300px;
+  border-radius: 15px;
+  border: 1px solid #ff7a3d;
+  position: absolute;
+  left: 60px;
+  top: 150px;
+}
+
+
+.container {
+  margin-left: 360px;
+  margin-top: 40px;
+  max-width: 700px;
+
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.container p:first-child {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.container p {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.anime-extra {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 2px solid #ff7a3d;
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 8px 25px rgba(255, 122, 61, 0.15);
+}
+.genres {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap; /* إذا كانو بزاف كيهبطو للسطر الثاني */
+  margin: 20px 0;
+}
+
+.genres h2 {
+  margin: 0;
+  padding: 8px 16px;
+  border: 1px solid #ff7a3d;
+  border-radius: 20px;
+  color: #ff7a3d;
+  background: rgba(212, 255, 63, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+}
+.characters-link {
+  text-decoration: none;
+}
+
+.characters-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #ff7a3d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.characters-btn:hover {
+  background: transparent;
+  color: #ff7a3d;
+  border: 1px solid #ff7a3d;
+  transform: translateY(-3px);
+}
+.characters-link {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 60px;
+  text-decoration: none;
+}
+
+.characters-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  background: #ff7a3d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.characters-btn:hover {
+  background: transparent;
+  border: 1px solid #ff7a3d;
+  color: #ff7a3d;
+}
