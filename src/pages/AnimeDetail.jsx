@@ -2,6 +2,7 @@ import {getAnimeById} from "../api/jikan";
 import {useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Footer from "../components/common/Footer.jsx";
 
 
 
@@ -44,6 +45,9 @@ export default function AnimeDetail() {
       <Link to={`/anime/${anime.mal_id}/characters`}>
       <button>character anime</button>
       </Link>
+      <div>
+        <Footer/>
+      </div>
     </div>
   );
 }

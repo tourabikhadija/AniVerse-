@@ -1,6 +1,7 @@
 import { getCharacterDetails } from "../api/jikan.js";
 import { useParams } from "react-router-dom";
 import { useState , useEffect } from "react";
+import Footer from "../components/common/Footer.jsx";
 
 export default function CharacterDetail() {
   const [character , setCharacter] = useState("")
@@ -22,6 +23,7 @@ export default function CharacterDetail() {
   return (
     <div>
       <p>{character.name}</p>
+      <Footer/>
     </div>
   );
 }

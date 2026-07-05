@@ -1,0 +1,43 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+/* Responsive container */
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* Breakpoints */
+
+/* Tablets */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

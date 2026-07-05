@@ -1,0 +1,60 @@
+
+body {
+  font-family: Arial, sans-serif;
+}
+.anime-link {
+  text-decoration: none;
+  color: inherit;
+}
+.AnimaCard{
+  border: 1px solid #ff7a3d;
+  width: 210px;
+  height: auto;
+  border-radius: 16px;
+  cursor: pointer;
+  background: #1b1c31;
+  overflow: hidden;
+}
+.AnimaCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255, 122, 61, 0.25);
+}
+
+.AnimaCard img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  
+}
+.AnimaCard h2{
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 16px;
+  text-align: center;
+   height: 40px;
+   overflow: hidden;
+}
+.anime-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 15px;
+  color: #cfcfcf;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+.anime-info p {
+  margin: 0;
+  font-weight: 500;
+  
+}
+
+
+
+
+
+
+
+

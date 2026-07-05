@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getAnimeCharacters } from "../api/jikan";
 import { Link } from "react-router-dom";
+import Footer from "../components/common/Footer.jsx";
+
 
 export default function AnimeCharacters() {
   const [characters, setCharacters] = useState([]);
@@ -33,6 +35,9 @@ export default function AnimeCharacters() {
           </div>
         </Link>
       ))}
+      <div>
+        <Footer/>
+      </div>
     </>
   );
 }

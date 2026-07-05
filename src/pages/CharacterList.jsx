@@ -1,3 +1,11 @@
+import Footer from "../components/common/Footer.jsx";
+
 export default function CharacterList() {
-  return <h1>Page characters</h1>;
+  return(
+    <div>
+      <h1></h1>
+      <Footer/>
+    </div>
+  );
+  
 }

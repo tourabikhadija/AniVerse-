@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import  "../style/Landing.css"
 import cover from "../assets/cover.png"; 
 import anime from "../assets/anime.png";
+import Footer from "../components/common/Footer.jsx";
 
 export default function Landing() {
   const [trending, setTrending] = useState([]);
@@ -62,19 +63,29 @@ export default function Landing() {
     </section>
 
 
-      <section className="Topanime">
-        <h1>top</h1>
+      <section className="Trending">
+        <h1>Trending Anime</h1>
+
+        <div className="cards">
         {trending.slice(0, 6).map((anime) => (
           <AnimeCard key={anime.mal_id} anime={anime} />
         ))}
+        </div>
+        
       </section>
 
-      <section>
-        <h1>season</h1>
+      <section className="Seasonal">
+        <h1>Seasonal Anime</h1>
+
+        <div className="cards">
         {season.slice(0, 6).map((anime) => (
           <AnimeCard key={anime.mal_id} anime={anime} />
         ))}
+        </div>
       </section>
+      <div>
+        <Footer/>
+      </div>
     
     </div>
   );
